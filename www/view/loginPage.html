@@ -1,0 +1,56 @@
+
+
+
+<ion-view title="EzRoommate Login" class="login-background">
+  <ion-content id="loginPage">
+    <div>
+      <div align="middle">
+        <img src="img/logo.jpg" class="logo">
+      </div>
+      <div class="transbox">
+        <div>
+          <div class="col">
+            <button class="button button-block button-positive" id="button-facebook" ng-click="loginwithFacebook()">LOGIN WIH FACEBOOK</button>
+          </div>
+        </div>
+        <div class="line">
+        <span class="inline-text">
+          &nbsp &nbsp or &nbsp &nbsp
+        </span>
+      </div>
+        <div class="input" id="form">
+          <label class="item item-input item-input-login">
+            <input type="text" placeholder="Email" ng-model="logInfo.username">
+          </label>
+          <label class="item item-input item-input-login">
+            <input type="password" placeholder="Password" ng-model="logInfo.password">
+          </label>
+        </div>
+        <div class="row">
+            <li class="item item-checkbox" id="remember-me">
+              <label class="checkbox" id="checkbox-remember">
+                <input id='accountLog' type="checkbox">
+              </label>Remember me </li>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="button button-block triipme-background" id="button-login"  ng-click="login()">LOGIN</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <button class="button button-block button-calm triipme-background" id="button-login" ng-click="signUp()">NEW ACCOUNT</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="forget-pass">
+            <button class="button button-clear button-calm triipme-color" >
+              Forgot your password?
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

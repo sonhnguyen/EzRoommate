@@ -1,0 +1,58 @@
+<style>
+	.popup-head {
+  background-color : #4FBBBC;
+}
+
+
+
+</style>
+<ion-view style="background-color: #F2F2F2" title="Home">
+    <ion-content>
+        <button class="button button-block button-calm triipme-background" ng-click="redir()">
+        Create new blog
+        </button>
+
+        <!--<ion-spinner ng-show="connected == true" style="margin-left: 50%;" icon="lines" class="spinner-positive"></ion-spinner>-->
+
+        <div ng-repeat="item in blogs">
+            <div class="list card padding-createblog-button">
+                <div class="item item-avatar avatar-custom">
+                    <img ng-src={{item.authoravatar}} ng-click="viewProfile(item.author)">
+                    <h2 ng-click="viewProfile(item.author)" style="color: #4DADAF; font-weight: 500">{{item.authorname}}</h2>
+                    <p>{{item.time}}</p>
+                    <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="redirEdit(item.id)">
+                        <i class="icon ion-chevron-right" style="color: #55B6B8"></i>
+                    </button>
+                </div>
+
+                <div class="item item-body">
+                    <!--<img class="full-image" data-ng-src="data:image/png;base64,{{item.img}}">-->
+					<p> {{item.title}}</p>
+                    <img class="full-image" data-ng-src=data:image/png;base64,{{item.img}}>
+                    <p>
+                        {{item.desc}}
+                    </p>
+                    <p>
+                        <a class="subdued" ng-click="likeBlog(item)">{{item.likes.num}} Like</a>
+                        <a class="subdued" ng-click="commentBlog($event,item)">{{item.comments.num}} Comments</a>
+                    </p>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" ng-click="likeBlog(item)">
+                        <i class="icon ion-thumbsup"></i>
+                        Like
+                    </a>
+                    <a class="tab-item" ng-click="commentBlog($event,item)">
+                        <i class="icon ion-chatbox"></i>
+                        Comment
+                    </a>
+                    <a class="tab-item" ng-click="shareBlog(item)">
+                        <i class="icon ion-share"></i>
+                        Share
+                    </a>
+                </div>
+            </div>
+        </div>
+	
+	</ion-content>
+</ion-view>
