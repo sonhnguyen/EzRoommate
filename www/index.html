@@ -43,6 +43,10 @@
   <script src="js/controller/homeController.js"></script>
   <script src="js/controller/blogcreateController.js"></script>
   <script src="js/controller/findController.js"></script>
+  <script src="js/controller/profileController.js"></script>
+  <script src="js/controller/notificationController.js"></script>
+  <script src="js/controller/settingController.js"></script>
+
 
 </head>
 <body ng-app="EzRoommateApp" ng-controller="MainController">&gt;
@@ -66,18 +70,18 @@
     </a>
     <a id="findTab" class="tab-item" href="#find" ng-click="viewFind()">
       <i class="icon ion-ios-search-strong"></i>
-      Profile
+      Find
     </a>
 
     <a id="profileTab" class="tab-item" href="#" ng-click="viewProfile()">
       <i class="icon ion-android-person"></i>
       Profile
     </a>
-    <a id="favoriteTab" class="tab-item" href="#noti" ng-click="viewFavorites()">
+    <a id="notificationTab" class="tab-item" href="#notification" ng-click="viewNotifications()">
       <i id="notifyIcon" class="icon ion-android-notifications-none"></i>
-      Favorites
+      Notification
     </a>
-    <a id="settingTab" class="tab-item" ng-click="viewSetting()">
+    <a id="settingTab" class="tab-item" href="#setting" ng-click="viewSetting()">
       <i class="icon ion-gear-a"></i>
       Settings
     </a>

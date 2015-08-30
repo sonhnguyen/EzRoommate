@@ -5,14 +5,14 @@ EzRoommateApp.controller('findController',['$scope','$state','$timeout', '$ionic
 	$scope.tags = ['ok1', 'ok2'];
 
 	$scope.users=[{
-		name:"Nguyễn Hoàng Sơn",
-		age:"20",
-		img:"img/demo-room.jpg"
+		name:"Artour \"Arteezy\" Babaev",
+		age:"19",
+		img:"img/user3_avatar.jpg"
 	},
 	{
-		name:"Mai Thiệu Trung",
-		age:"23",
-		img:"img/demo-room-2.jpg"
+		name:"Clinton \"Fear\" Loomis",
+		age:"27",
+		img:"img/user2_avatar.jpg"
 	}
 	];
 
@@ -21,6 +21,7 @@ EzRoommateApp.controller('findController',['$scope','$state','$timeout', '$ionic
 
 	$scope.showUser = function(index){
 		console.log(index);
+		$scope.viewProfile();
 	}
 
 }]);

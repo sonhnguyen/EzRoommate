@@ -1,0 +1,35 @@
+<ion-view title="Profile">
+<ion-content style="background-color: #F2F2F2;">
+
+
+
+
+
+
+<div id="profile-bg"></div>
+<div style="background-color: #F2F2F2" id="content">
+    <div id="profile-info">
+      <img id="profile-image" class="avatar-custom" ng-src={{user.Avatar}}>
+      <h3 id="profile-name" clas ng-model="user.Name">{{user.Name}}, {{user.Age}}</h3>
+      <span id="profile-description">{{user.Description}}</span>
+  </div>
+
+  <div class="list card padding-createblog-button">
+    <div class="item item-body">
+        <!--<img class="full-image" data-ng-src="data:image/png;base64,{{item.img}}">-->
+        <p>
+            Hello guys, I am a 16 year old professional Dota 2 player
+        </p>
+        <p>
+            2 Interests
+        </p>
+        <tags-input ng-model="tags" placeholder="Input your interests here"></tags-input>
+
+
+</ion-list>
+</div>
+</div>
+
+
+</ion-content>
+</ion-view>

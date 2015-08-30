@@ -28,13 +28,11 @@ EzRoommateApp.controller('homeController',['$scope','$state','$timeout', '$ionic
         time : "29/08/2015",
         authorname:" Nguyễn Hoàng Sơn",
         id : 1,
-        authoravatar:"img/avatar.jpg",
+        authoravatar:"img/user1_avatar.jpg",
         author : "author",
         title:"Cần tìm một bạn nữ dễ thương 19 tuổi",
         desc:"Yêu cầu chưa có bạn trai, tính tình dễ thương và thích làm việc nhà",
         imgs:["img/demo-room.jpg", "img/demo-room-2.jpg"]
-
-
     };
 
     $scope.blogs.push($scope.blog);

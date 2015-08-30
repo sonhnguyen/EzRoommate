@@ -40,9 +40,9 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
     $('#profileTab').addClass('active');
     $('#favoriteTab').removeClass('active');
     $('#settingTab').removeClass('active');    
-    $state.go('profile',{userid:fb.getAuth().uid});
+    $state.go('profile',1);
   };
-  $scope.viewFavorites = function($event){
+  $scope.viewNotifications = function($event){
     $('#homeTab').removeClass('active');
     $('#findTab').removeClass('active');
     $('#profileTab').removeClass('active');
