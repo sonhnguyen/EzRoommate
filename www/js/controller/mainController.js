@@ -1,5 +1,5 @@
 EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$ionicPopup','$ionicLoading','$ionicModal','$ionicHistory',function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
-  
+
 
   console.log('ok');
   $scope.headerGoBack = function () {
@@ -17,5 +17,45 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
       $('#navBar').css('display','none');
     }
   }
+
+
+  $scope.viewHome = function($event){
+    $('#homeTab').addClass('active');
+    $('#findTab').removeClass('active');
+    $('#profileTab').removeClass('active');
+    $('#favoriteTab').removeClass('active');
+    $('#settingTab').removeClass('active');
+  };
+
+  $scope.viewFind = function($event){
+    $('#homeTab').removeClass('active');
+    $('#findTab').addClass('active');
+    $('#profileTab').removeClass('active');
+    $('#favoriteTab').removeClass('active');
+    $('#settingTab').removeClass('active');
+  };
+    $scope.viewProfile = function(){
+    $('#homeTab').removeClass('active');
+    $('#findTab').removeClass('active');
+    $('#profileTab').addClass('active');
+    $('#favoriteTab').removeClass('active');
+    $('#settingTab').removeClass('active');    
+    $state.go('profile',{userid:fb.getAuth().uid});
+  };
+  $scope.viewFavorites = function($event){
+    $('#homeTab').removeClass('active');
+    $('#findTab').removeClass('active');
+    $('#profileTab').removeClass('active');
+    $('#favoriteTab').addClass('active');
+    $('#settingTab').removeClass('active');
+    $('#notifyIcon').css('color','#41B95A');
+  };
+  $scope.viewSetting = function($event){
+    $('#homeTab').removeClass('active');
+    $('#findTab').removeClass('active');
+    $('#profileTab').removeClass('active');
+    $('#favoriteTab').removeClass('active');
+    $('#settingTab').addClass('active');
+  };
 
 }]);

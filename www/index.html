@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/ng-tags-input.css">    
+  <link rel="stylesheet" href="css/ng-tags-input.bootstrap.css">    
+
+  <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+  -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- AngularJS plugins -->
-    <script src="https://code.angularjs.org/1.3.15/angular-route.min.js"></script>
-
-    <!-- ng cordova -->
-    <script src="js/include/ng-cordova.min.js"></script>
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- APP.JS -->
-    <script src="js/jquery/jquery-1.11.1.min.js"></script>   
-    <script src="js/app.js"></script>
-
-    <!-- include source code-->
-    <script src="js/route.js"></script>
-    <script src="js/service.js"></script>
-
-    <script src="js/controller/mainController.js"></script>
-    <script src="js/controller/loginController.js"></script>
-    <script src="js/controller/homeController.js"></script>
-
-  </head>
-  <body ng-app="EzRoommateApp" ng-controller="MainController">&gt;
-    <ion-pane>
-
-          <ion-nav-bar id="navBar" class="bar nav-title-slide-ios7">
-            <ion-nav-back-button class="button-clear" ng-click="headerGoBack()">
-              <i class="ion-arrow-left-c"></i> Back
-            </ion-nav-back-button>
-          </ion-nav-bar>    
+  <!-- AngularJS plugins -->
+  <script src="https://code.angularjs.org/1.3.15/angular-route.min.js"></script>
 
 
-        <ion-nav-view>
-        </ion-nav-view>
+  <!-- ng cordova -->
+  <script src="js/include/ng-cordova.min.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
 
-      <div id="myTab" class="tabs-striped  has-tabs tabs-color-calm">
-        <div class="tabs triipme-color">
-          <a id="homeTab" class="tab-item active" href="#home" ng-click="viewHome()">
-            <i class="icon ion-home"></i>
-            Home
-          </a>
-          <a id="profileTab" class="tab-item" href="#" ng-click="viewProfile()">
-            <i class="icon ion-android-person"></i>
-            Profile
-          </a>
-          <a id="favoriteTab" class="tab-item" href="#noti" ng-click="viewFavorites()">
-            <i id="notifyIcon" class="icon ion-android-notifications-none"></i>
-            Favorites
-          </a>
-          <a id="settingTab" class="tab-item" ng-click="openPopover($event)">
-            <i class="icon ion-gear-a"></i>
-            Settings
-          </a>
-          <script id="my-popover.html" type="text/ng-template">
-            <ion-popover-view style="height:100px;width:100px; border-radius:20%; background:whitesmoke">
-              <ion-content>
-                <a class="tab-item" ng-click="showConfirm($event)" style="color: #4FBBBC">
-                  <i class="icon ion-log-out"></i>Log out
-                </a>
-              </ion-content>
-            </ion-popover-view>
-          </script>
+  <!-- APP.JS -->
+  <script src="js/jquery/jquery-1.11.1.min.js"></script>   
+  <script src="js/app.js"></script>
 
-        </div>
-      </div>
-    </ion-pane>
-  </body></html>
+  <!-- tags -->
+  <script type="text/javascript" src="js/include/ng-tags-input.js"></script>
+
+  <!-- include source code-->
+  <script src="js/route.js"></script>
+  <script src="js/service.js"></script>
+
+  <script src="js/controller/mainController.js"></script>
+  <script src="js/controller/loginController.js"></script>
+  <script src="js/controller/homeController.js"></script>
+  <script src="js/controller/blogcreateController.js"></script>
+  <script src="js/controller/findController.js"></script>
+
+</head>
+<body ng-app="EzRoommateApp" ng-controller="MainController">&gt;
+  <ion-pane>
+
+  <ion-nav-bar id="navBar" class="bar nav-title-slide-ios7">
+  <ion-nav-back-button class="button-clear" ng-click="headerGoBack()">
+  <i class="ion-arrow-left-c"></i> Back
+</ion-nav-back-button>
+</ion-nav-bar>    
+
+
+<ion-nav-view>
+</ion-nav-view>
+
+<div id="myTab" class="tabs-striped  has-tabs tabs-color-balanced">
+  <div class="tabs triipme-color">
+    <a id="homeTab" class="tab-item" href="#home" ng-click="viewHome()">
+      <i class="icon ion-home"></i>
+      Home
+    </a>
+    <a id="findTab" class="tab-item" href="#find" ng-click="viewFind()">
+      <i class="icon ion-ios-search-strong"></i>
+      Profile
+    </a>
+
+    <a id="profileTab" class="tab-item" href="#" ng-click="viewProfile()">
+      <i class="icon ion-android-person"></i>
+      Profile
+    </a>
+    <a id="favoriteTab" class="tab-item" href="#noti" ng-click="viewFavorites()">
+      <i id="notifyIcon" class="icon ion-android-notifications-none"></i>
+      Favorites
+    </a>
+    <a id="settingTab" class="tab-item" ng-click="viewSetting()">
+      <i class="icon ion-gear-a"></i>
+      Settings
+    </a>
+  </div>
+</div>
+</ion-pane>
+</body></html>

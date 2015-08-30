@@ -1,17 +1,17 @@
-EzRoommateApp.controller('homeController',['$scope','$state','$timeout',function($scope,$state,$timeout){
+EzRoommateApp.controller('homeController',['$scope','$state','$timeout', '$ionicBackdrop', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate',function($scope,$state,$timeout, $ionicBackdrop, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate){
+
+
+
 
     $scope.activateProfileTab = function() {
-        $('#homeTab').removeClass('active');
-        $('#profileTab').addClass('active');
+        $('#homeTab').addClass('active');
+        $('#findTab').removeClass('active');
+        $('#profileTab').removeClass('active');
         $('#favoriteTab').removeClass('active');
         $('#settingTab').removeClass('active');
     }
-
-    if(NameOfUser == "" || AvatarOfUser == ""){
-            NameOfUser = "Nguyen Hoang Son";
-            AvatarOfUser = "";
-        };
     
+    $scope.activateProfileTab();
 
     // VARIABLES
     $scope.blog = {};
@@ -25,24 +25,66 @@ EzRoommateApp.controller('homeController',['$scope','$state','$timeout',function
     $scope.userName = "Nguyen Hoang Son User Name";
 
     $scope.blog = {
-        time : "01/01/1990",
-        authorname:" author name",
+        time : "29/08/2015",
+        authorname:" Nguyễn Hoàng Sơn",
         id : 1,
         authoravatar:"img/avatar.jpg",
         author : "author",
-        title:" title",
-        desc:"desc",
-        img:"img/avatar.jpg",
+        title:"Cần tìm một bạn nữ dễ thương 19 tuổi",
+        desc:"Yêu cầu chưa có bạn trai, tính tình dễ thương và thích làm việc nhà",
+        imgs:["img/demo-room.jpg", "img/demo-room-2.jpg"]
 
 
     };
 
     $scope.blogs.push($scope.blog);
-        console.log('ok');
 
-    console.log($scope.blogs);
-    $scope.Init = function()
-    {
+    $scope.zoomMin = 1;
+
+    $scope.showImages = function(index, parentIndex) {
+        $scope.activeSlide = index;
+        console.log(index);
+        console.log('imgs parent');
+        $scope.eventImg= $scope.blogs[parentIndex].imgs;
+        console.log($scope.blogs[parentIndex].imgs);
+        $scope.showModal('view/template/gallery-zoomview.html');
+    };
+
+    $scope.showModal = function(templateUrl) {
+      $ionicModal.fromTemplateUrl(templateUrl, {
+        scope: $scope,
+        backdropClickToClose: true
+
+    }).then(function(modal) {
+        $scope.modal = modal;
+        $scope.modal.show();
+    });
+}
+
+$scope.closeModal = function() {
+  $scope.modal.hide();
+  $scope.modal.remove()
+};
+
+$scope.updateSlideStatus = function(slide) {
+  var zoomFactor = $ionicScrollDelegate.$getByHandle('scrollHandle' + slide).getScrollPosition().zoom;
+  if (zoomFactor == $scope.zoomMin) {
+    $ionicSlideBoxDelegate.enableSlide(true);
+} else {
+    $ionicSlideBoxDelegate.enableSlide(false);
+}
+};
+
+$scope.redir = function(){
+    //if (!$scope.$$phase) {
+    //    $scope.$apply(function() { $location.path("/create"); });
+    //}
+    //$location.path("/create");       
+    $state.go("create");
+};
+
+$scope.Init = function()
+{
 
 
         // NOTIFICATION

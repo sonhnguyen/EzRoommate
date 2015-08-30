@@ -1,0 +1,49 @@
+<style>
+.popup-head {
+  background-color : #4FBBBC;
+}
+</style>
+<ion-view style="background-color: #F2F2F2; ;" title="Find your roommate">
+<ion-content class="ion-content-marginbtm">
+
+<div class="list card padding-createblog-button">
+    <div class="item item-body">
+        <a class="item item-list-detail">
+            <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="activeSlide">
+                <ion-slide ng-repeat="user in users">
+                    <div class=" item  image-find">
+                        <img class ="find-avatar" ng-src="{{user.img}}" ng-click="showUser($index)"> </img>  
+                    </div>
+                    <div class=" text-center"> <p class="title-find">{{user.name}}, {{user.age}} tuổi </p></div>
+                </ion-slide>
+            </ion-slide-box>
+        </a>
+    </div>
+
+</div>
+
+
+
+<a class="item item-list-detail">
+    <ion-scroll direction="x" class="">
+    <img ng-repeat="image in imgs" ng-src="{{image}}" ng-click="showImages($index, $parent.$index)" class="image-list-thumb"/>
+</ion-scroll>
+</a>
+<div class="list card padding-createblog-button">
+    <div class="item item-body">
+        <!--<img class="full-image" data-ng-src="data:image/png;base64,{{item.img}}">-->
+        <h2 class="title"> Nguyễn Hoàng Sơn, 20 tuổi</h2>
+        <p>
+            Thích màu tím, yêu hòa bình
+        </p>
+        <p>
+            Sở thích: Anime, Dota 2
+        </p>
+        <tags-input ng-model="tags" placeholder="ok" removeTagSymbol="o"></tags-input>
+
+    </div>
+
+</div>
+</div>
+</ion-content>
+</ion-view>

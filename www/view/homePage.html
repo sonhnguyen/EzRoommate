@@ -2,14 +2,11 @@
 	.popup-head {
   background-color : #4FBBBC;
 }
-
-
-
 </style>
-<ion-view style="background-color: #F2F2F2" title="Home">
-    <ion-content>
+<ion-view style="background-color: #F2F2F2; ;" title="Home">
+    <ion-content class="ion-content-marginbtm">
         <button class="button button-block button-calm triipme-background" ng-click="redir()">
-        Create new blog
+        Post your room now
         </button>
 
         <!--<ion-spinner ng-show="connected == true" style="margin-left: 50%;" icon="lines" class="spinner-positive"></ion-spinner>-->
@@ -18,17 +15,22 @@
             <div class="list card padding-createblog-button">
                 <div class="item item-avatar avatar-custom">
                     <img ng-src={{item.authoravatar}} ng-click="viewProfile(item.author)">
-                    <h2 ng-click="viewProfile(item.author)" style="color: #4DADAF; font-weight: 500">{{item.authorname}}</h2>
-                    <p>{{item.time}}</p>
+                    <h2 ng-click="viewProfile(item.author)" class="author-homepage">{{item.authorname}}</h2>
+                    <p>Posted at {{item.time}}</p>
                     <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="redirEdit(item.id)">
-                        <i class="icon ion-chevron-right" style="color: #55B6B8"></i>
+                        <i class="icon ion-chevron-right triipme-color"> </i>
                     </button>
                 </div>
 
                 <div class="item item-body">
                     <!--<img class="full-image" data-ng-src="data:image/png;base64,{{item.img}}">-->
-					<p> {{item.title}}</p>
-                    <img class="full-image" data-ng-src=data:image/png;base64,{{item.img}}>
+					<h2 class="title"> {{item.title}}</h2>
+                    <a class="item item-list-detail">
+                        <ion-scroll direction="x" class="">
+                            <img ng-repeat="image in item.imgs" ng-src="{{image}}" ng-click="showImages($index, $parent.$index)" class="image-list-thumb"/>
+                        </ion-scroll>
+                    </a>
+
                     <p>
                         {{item.desc}}
                     </p>

@@ -1,0 +1,90 @@
+<ion-view title="Đăng tin">
+<ion-content>
+<div class="list padding-createblog-button">
+
+
+    <div class="row">
+        <div class="col ">        
+            <button class="button button-block ion-ios-camera" ng-click="takePicture()">
+                Camera
+            </button>
+        </div>
+        
+        <div class="col col-50">        
+            <button class="button button-block ion-images" ng-click="choosePicture()">
+                Gallery
+            </button>
+        </div>
+    </div>
+
+
+    <label class="item item-input">
+        <div class="col col-50 display-inherit">        
+            <span class="input-label">
+                Thành phố
+            </span>
+            <select>
+                <option>Hà Nội</option>
+                <option selected>Hải Phòng</option>
+                <option>Hồ Chí Minh</option>
+            </select>
+        </div>
+
+        <div class="col col-50 display-inherit">        
+
+            <span class="input-label">
+                Quận
+            </span>
+            <select>
+                <option>1</option>
+                <option selected>2</option>
+                <option>Bình Chánh</option>
+                <option>Bình Thạnh</option>
+            </select>
+        </div>
+
+    </label>
+
+
+    <label class="item item-input">
+        <span class="input-label">Tiêu đề </span>
+        <input type="text" placeholder="Cần kiếm bạn cùng phòng">
+    </label>
+    <label class="item item-input">
+        <span class="input-label">Địa chỉ </span>
+        <input type="text" placeholder="Số nhà, ngõ, đường">
+    </label>
+    <label class="item item-input">
+        <span class="input-label">Giá phòng </span>
+        <input type="tel" placeholder="2.000.000đ">
+    </label>
+    <label class="item item-input">
+        <span class="input-label">Diện tích </span>
+        <input type="tel" placeholder="12(mét vuông)">
+    </label>
+    <label class="item item-input">
+        <span class="input-label">Mô tả thêm </span>
+        <input type="text" placeholder="Có chỗ để xe, giờ giấc thoải mái">
+    </label>
+
+    
+    <!--<img id="test" data-ng-src="img/joy.jpg"/>-->
+    <ion-scroll direction="x" class="available-scroller" id='img-container'>
+    <div class="createBlog-list-photo" collection-repeat="photo in photos"
+    item-height="250" item-width="300">
+    <img ng-src="{{photo.src}}"/>
+</div>
+</ion-scroll>
+
+<a class="item item-list-detail">
+    <ion-scroll direction="x" class="">
+    <img ng-repeat="photo in photos" ng-src="{{photo}}" ng-click="showImages($index)" class="image-list-thumb"/>
+</ion-scroll>
+</a>
+
+<button class="button button-block button-positive triipme-background padding-createblog-button" ng-click="createBlog()">
+    Đăng tin ngay
+</button>
+</div>
+</ion-content>
+</ion-view>
