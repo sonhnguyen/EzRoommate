@@ -30,8 +30,8 @@ EzRoommateApp.controller('homeController',['$scope','$state','$timeout', '$ionic
         id : 1,
         authoravatar:"img/user1_avatar.jpg",
         author : "author",
-        title:"Cần tìm một bạn nữ dễ thương 19 tuổi",
-        desc:"Yêu cầu chưa có bạn trai, tính tình dễ thương và thích làm việc nhà",
+        title:"Need to find another roommate since my room is too big",
+        desc:"Make sure you play good Doto",
         imgs:["img/demo-room.jpg", "img/demo-room-2.jpg"]
     };
 

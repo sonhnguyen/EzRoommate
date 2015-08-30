@@ -1,14 +1,18 @@
 <ion-view title="Notification">
     <ion-content>
-            <div class="list card">
-                <div ng-repeat="noti in notiList">
-                    <div class="card" >
-                        {{noti.time}}
+
+            <div class="list">
+
+    <a class="item item-avatar" href="#" ng-repeat="noti in notiList">
+      <img src="{{noti.img}}">
+      <h2>{{noti.authorname}}</h2>
                         <p ng-if="noti.type=='like'">{{noti.authorname}} liked your post !</p>
                         <p ng-if="noti.type=='comment'">{{noti.authorname}} commented on your post !</p>
                         <p ng-if="noti.type=='message'">{{noti.authorname}} messaged you: {{noti.message}}</p>
-                    </div>
-                </div>
-            </div>
+    </a>
+
+
+</div>
+
     </ion-content>
 </ion-view>

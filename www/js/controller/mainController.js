@@ -16,14 +16,14 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
       $('#myTab').css('display','none');
       $('#navBar').css('display','none');
     }
-  }
+  };
 
 
   $scope.viewHome = function($event){
     $('#homeTab').addClass('active');
     $('#findTab').removeClass('active');
     $('#profileTab').removeClass('active');
-    $('#favoriteTab').removeClass('active');
+    $('#notificationTab').removeClass('active');
     $('#settingTab').removeClass('active');
   };
 
@@ -31,14 +31,14 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
     $('#homeTab').removeClass('active');
     $('#findTab').addClass('active');
     $('#profileTab').removeClass('active');
-    $('#favoriteTab').removeClass('active');
+    $('#notificationTab').removeClass('active');
     $('#settingTab').removeClass('active');
   };
     $scope.viewProfile = function(){
     $('#homeTab').removeClass('active');
     $('#findTab').removeClass('active');
     $('#profileTab').addClass('active');
-    $('#favoriteTab').removeClass('active');
+    $('#notificationTab').removeClass('active');
     $('#settingTab').removeClass('active');    
     $state.go('profile',1);
   };
@@ -46,7 +46,7 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
     $('#homeTab').removeClass('active');
     $('#findTab').removeClass('active');
     $('#profileTab').removeClass('active');
-    $('#favoriteTab').addClass('active');
+    $('#notificationTab').addClass('active');
     $('#settingTab').removeClass('active');
     $('#notifyIcon').css('color','#41B95A');
   };
@@ -54,7 +54,7 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
     $('#homeTab').removeClass('active');
     $('#findTab').removeClass('active');
     $('#profileTab').removeClass('active');
-    $('#favoriteTab').removeClass('active');
+    $('#notificationTab').removeClass('active');
     $('#settingTab').addClass('active');
   };
 
