@@ -3,10 +3,16 @@
   background-color : #4FBBBC;
 }
 </style>
-<ion-view style="background-color: #F2F2F2; ;" title="Find your roommate">
+<ion-view style="background-color: #F2F2F2; ;" title="Find your roommate" >
+    <ion-nav-buttons side="right">
+      <button class="button" ng-click="changeStyle()">
+        Change Style of this page.
+      </button>
+    </ion-nav-buttons>
+
 <ion-content class="ion-content-marginbtm">
 
-<div class="list card padding-createblog-button">
+<div class="list card padding-createblog-button" ng-if="state==0">
     <div class="item item-body">
         <a class="item item-list-detail">
             <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="activeSlide">
@@ -19,6 +25,17 @@
     </ion-slide-box>
 </a>
 </div>
+
+</div>
+
+<div class="list" ng-if="state==1">
+
+    <a class="item item-avatar" href="#" ng-repeat="user in users" ng-click="showUser(1)">
+      <img ng-src="{{user.img}}">
+      <h2>{{user.name}}, {{user.age}}</h2>
+      <p>{{user.description}}</p>
+  </a>
+
 
 </div>
 
