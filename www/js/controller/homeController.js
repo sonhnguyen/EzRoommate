@@ -32,7 +32,9 @@ EzRoommateApp.controller('homeController',['$scope','$state','$timeout', '$ionic
         author : "author",
         title:"Need to find another roommate since my room is too big",
         desc:"Make sure you play good Doto",
-        imgs:["img/demo-room.jpg", "img/demo-room-2.jpg"]
+        imgs:["img/demo-room.jpg", "img/demo-room-2.jpg"],
+        likes:3,
+        comments:4,
     };
 
     $scope.blogs.push($scope.blog);
@@ -59,6 +61,10 @@ EzRoommateApp.controller('homeController',['$scope','$state','$timeout', '$ionic
     });
 }
 
+$scope.showPopupQuestion = function() {
+    $state.go("question");
+}
+
 $scope.closeModal = function() {
   $scope.modal.hide();
   $scope.modal.remove()
@@ -80,6 +86,9 @@ $scope.redir = function(){
     //$location.path("/create");       
     $state.go("create");
 };
+$scope.shareFriend = function(){
+    $state.go("share");
+}
 
 $scope.Init = function()
 {

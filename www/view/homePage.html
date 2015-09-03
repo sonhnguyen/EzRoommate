@@ -17,8 +17,9 @@
                     <img ng-src={{item.authoravatar}} ng-click="viewProfile(item.author)">
                     <h2 ng-click="viewProfile(item.author)" class="author-homepage">{{item.authorname}}</h2>
                     <p>Posted at {{item.time}}</p>
-                    <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="redirEdit(item.id)">
-                        <i class="icon ion-chevron-right triipme-color"> </i>
+                    <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="showPopupQuestion()">
+                        <i class="icon ion-ios-star triipme-color"> Pick this room</i>
+
                     </button>
                 </div>
 
@@ -35,8 +36,8 @@
                         {{item.desc}}
                     </p>
                     <p>
-                        <a class="subdued" ng-click="likeBlog(item)">{{item.likes.num}} Like</a>
-                        <a class="subdued" ng-click="commentBlog($event,item)">{{item.comments.num}} Comments</a>
+                        <a class="subdued" ng-click="likeBlog(item)">{{item.likes}} Likes</a>
+                        <a class="subdued" ng-click="commentBlog($event,item)">{{item.comments}} Comments</a>
                     </p>
                 </div>
                 <div class="item tabs tabs-secondary tabs-icon-left">
@@ -48,9 +49,9 @@
                         <i class="icon ion-chatbox"></i>
                         Comment
                     </a>
-                    <a class="tab-item" ng-click="shareBlog(item)">
+                    <a class="tab-item" ng-click="shareFriend()">
                         <i class="icon ion-share"></i>
-                        Share
+                        Suggest to your friends
                     </a>
                 </div>
             </div>

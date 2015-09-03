@@ -1,0 +1,28 @@
+<ion-view title="Suggest to your friends">
+<ion-content class="ion-content-marginbtm">
+
+<div class="list" >
+
+	<label class="item item-avatar" href="#" ng-repeat="user in users" ng-click="showUser(1)">
+		<img ng-src="{{user.img}}">
+		<h2>{{user.name}}, {{user.age}}</h2>
+		<p>{{user.description}}</p>
+		<label class="checkbox item-checkbox-img">
+			<input type="checkbox">
+		</label>
+
+	</label>
+	<button class="button button-full button-balanced">
+		Submit
+	</button>
+
+
+
+
+</div>
+
+
+
+
+</ion-content>
+</ion-view>

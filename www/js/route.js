@@ -42,6 +42,16 @@ EzRoommateApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "view/settingPage.html",
             controller: "settingController"
         })
+        .state("question", {
+            url: "/question",
+            templateUrl: "view/questions-popup.html",
+            controller: "questionController"
+        })
+        .state("share", {
+            url: "/share",
+            templateUrl: "view/sharePage.html",
+            controller: "shareController"
+        })
     $urlRouterProvider.otherwise('/');
 
 });
