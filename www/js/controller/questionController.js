@@ -1,4 +1,4 @@
-EzRoommateApp.controller('questionController',['$scope','$state',function($scope,$state){
+EzRoommateApp.controller('questionController',['$scope','$state','$ionicPopup',function($scope,$state,$ionicPopup){
 
     $scope.questionLists=[
     {
@@ -43,6 +43,15 @@ EzRoommateApp.controller('questionController',['$scope','$state',function($scope
 
         ],
     },
-    ]
+    ];
+ $scope.showAlert = function() {
+   var alertPopup = $ionicPopup.alert({
+     title: 'Successfully submission',
+     template: 'Your submission has been sent to this person.'
+   });
+   alertPopup.then(function(res) {
+     $state.go('home');
+   });
+ };
 }]);
 

@@ -18,7 +18,7 @@
             <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="activeSlide">
             <ion-slide ng-repeat="user in users">
             <div class=" item  image-find">
-                <img class ="find-avatar" ng-src="{{user.img}}" ng-click="showUser(1)"> </img>  
+                <img class ="find-avatar" ng-src="{{user.img}}" ng-click="showUser(user)"> </img>  
             </div>
             <div class=" text-center"> <p class="title-find">{{user.name}}, {{user.age}} </p></div>
         </ion-slide>
@@ -30,7 +30,7 @@
 
 <div class="list" ng-if="state==1">
 
-    <a class="item item-avatar" href="#" ng-repeat="user in users" ng-click="showUser(1)">
+    <a class="item item-avatar" href="#" ng-repeat="user in users" ng-click="showUser(user)">
       <img ng-src="{{user.img}}">
       <h2>{{user.name}}, {{user.age}}</h2>
       <p>{{user.description}}</p>

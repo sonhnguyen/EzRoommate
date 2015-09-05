@@ -6,13 +6,12 @@
 
 
 
-<div id="profile-bg"></div>
 <div style="background-color: #F2F2F2" id="content">
     <div id="profile-info">
-      <img id="profile-image" class="avatar-custom" ng-src={{user.Avatar}}>
+      <img align="left" style="margin-left:10px" id="profile-image" class="avatar-custom" ng-src={{user.Avatar}}>
       <h3 id="profile-name" clas ng-model="user.Name">{{user.Name}}, {{user.Age}}</h3>
       <span id="profile-description">{{user.Description}}</span>
-  </div>
+  </div
 
   <div class="list card padding-createblog-button">
     <div class="item item-body">
@@ -29,6 +28,9 @@
 </ion-list>
 </div>
 </div>
+        <button class="button button-block button-balanced" style="width:93%;margin-left:10px;" ng-click="showPopupQuestion()">
+			Choose this person
+        </button>
 
 
 </ion-content>

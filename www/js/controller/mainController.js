@@ -34,13 +34,13 @@ EzRoommateApp.controller('MainController', ['$scope','$state','$ionicPopover','$
     $('#notificationTab').removeClass('active');
     $('#settingTab').removeClass('active');
   };
-    $scope.viewProfile = function(){
+    $scope.viewProfile = function(user){
     $('#homeTab').removeClass('active');
     $('#findTab').removeClass('active');
     $('#profileTab').addClass('active');
     $('#notificationTab').removeClass('active');
     $('#settingTab').removeClass('active');    
-    $state.go('profile',1);
+    $state.go('profile',user);
   };
   $scope.viewNotifications = function($event){
     $('#homeTab').removeClass('active');

@@ -4,6 +4,7 @@ EzRoommateApp.controller('profileController',['$scope','$state','$timeout','$sta
 	//if($stateParams.userid === 0)
 	//	userid = fb.getAuth().uid;
 	//else
+	
 	$scope.user ={
 		Avatar:"img/user1_avatar.jpg",
 		Name:"Syed SumaiL Hassan",
@@ -27,6 +28,7 @@ EzRoommateApp.controller('profileController',['$scope','$state','$timeout','$sta
     };		    		
 
     function viewProfile(){
+		console.log($scope.concu);
     	$state.go('profile');
     }
 
@@ -69,5 +71,9 @@ EzRoommateApp.controller('profileController',['$scope','$state','$timeout','$sta
     		$ionicSlideBoxDelegate.enableSlide(false);
     	}
     };
+	
+	$scope.showPopupQuestion = function() {
+		$state.go("question");
+	};
 
 }]);
